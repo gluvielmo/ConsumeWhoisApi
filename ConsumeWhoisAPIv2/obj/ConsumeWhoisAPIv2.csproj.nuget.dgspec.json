@@ -1,0 +1,77 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\agui8\\source\\repos\\ConsumeWhoisAPIv2\\ConsumeWhoisAPIv2\\ConsumeWhoisAPIv2.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\agui8\\source\\repos\\ConsumeWhoisAPIv2\\ConsumeWhoisAPIv2\\ConsumeWhoisAPIv2.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\agui8\\source\\repos\\ConsumeWhoisAPIv2\\ConsumeWhoisAPIv2\\ConsumeWhoisAPIv2.csproj",
+        "projectName": "ConsumeWhoisAPIv2",
+        "projectPath": "C:\\Users\\agui8\\source\\repos\\ConsumeWhoisAPIv2\\ConsumeWhoisAPIv2\\ConsumeWhoisAPIv2.csproj",
+        "packagesPath": "C:\\Users\\agui8\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\agui8\\source\\repos\\ConsumeWhoisAPIv2\\ConsumeWhoisAPIv2\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\agui8\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[106.10.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
