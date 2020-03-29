@@ -16,9 +16,11 @@ namespace ConsumeWhoisAPIv2.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public ActionResult DomainSearch(string domain)
         {
-            return View();
+            var domainResponse = new RequestApiModel().DomainSearch(domain);
+            return View("Index", domainResponse);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -2,11 +2,48 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <div class="login-form">
-        <form action="">
-            <input type="text" placeholder="Insert here the domain" autocomplete="off" name="domain">
-            <button type="submit" class="">Search</button>
-        </form>
+    <div class="text-center">
+        <div class="login-form">
+            <form action="@Url.Action("DomainSearch", "Home")" method="post">
+                <input type="text" placeholder="Insert here the domain" autocomplete="off" name="domain">
+                <button type="submit" class="" data-loading-text="Searching...">Search</button>
+            </form>
+        </div>
+        @if (Model != null)
+        {
+
+            if (Model.Registered)
+            {
+                <div class="my-5">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-start">
+                            <p>Domain: @Model.Name</p>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-start">
+                            <p>Register Date: @Model.RegisterDate</p>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-start">
+                            <p>Last Update: @Model.LastUpdate</p>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-start">
+                            <p>Domain Expires At: @Model.ExpiresAt</p>
+                        </li>
+                        @foreach (string nameServer in @Model.NameServers)
+                        {
+                            <li class="list-group-item d-flex justify-content-start">
+                                <p>Name Server: @nameServer</p>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+            else
+            {
+                <div class="my-5">
+                    <p>Domain available for registration</p>
+                </div>
+            }
+
+        }
+
     </div>
-</div>
