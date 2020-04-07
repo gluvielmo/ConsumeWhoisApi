@@ -4,14 +4,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using ConsumeWhoisAPIv2.Models;
 
-namespace ConsumeWhoisAPIv2.Models
+namespace ConsumeWhoisAPIv2.Client
 {
-    public class RequestApiModel
+    public class RequestApiClient
     {
         private readonly RestClient client;
 
-        public RequestApiModel() => client = new RestClient("https://jsonwhoisapi.com/");
+        public RequestApiClient() => client = new RestClient("https://jsonwhoisapi.com/");
 
         public DomainModel DomainSearch(string domain)
         {

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ConsumeWhoisAPIv2.Models;
+using ConsumeWhoisAPIv2.Client;
 using Microsoft.EntityFrameworkCore;
 
 namespace ConsumeWhoisAPIv2.Controllers
@@ -39,7 +40,7 @@ namespace ConsumeWhoisAPIv2.Controllers
             }
             else
             {
-                var domainResponse = new RequestApiModel().DomainSearch(domain);
+                var domainResponse = new RequestApiClient().DomainSearch(domain);
 
                 _db.Domains.Add(domainResponse);
                 _db.SaveChanges();
