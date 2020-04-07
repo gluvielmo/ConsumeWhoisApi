@@ -1,0 +1,35 @@
+﻿
+@model IEnumerable<ConsumeWhoisAPIv2.Models.DomainModel>
+
+@{
+    ViewData["Title"] = "History";
+}
+
+<h1>History</h1>
+<div class="text-center">
+    @foreach (var domain in Model)
+    {
+        <div class="my-5">
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-start">
+                    <p>Domain: @domain.Name</p>
+                </li>
+                <li class="list-group-item d-flex justify-content-start">
+                    <p>Register Date: @domain.RegisterDate</p>
+                </li>
+                <li class="list-group-item d-flex justify-content-start">
+                    <p>Last Update: @domain.LastUpdate</p>
+                </li>
+                <li class="list-group-item d-flex justify-content-start">
+                    <p>Domain Expires At: @domain.ExpiresAt</p>
+                </li>
+                @foreach (string nameServer in @domain.NameServers)
+                {
+                    <li class="list-group-item d-flex justify-content-start">
+                        <p>Name Server: @nameServer</p>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+</div>
