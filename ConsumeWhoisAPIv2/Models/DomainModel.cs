@@ -31,5 +31,6 @@ namespace ConsumeWhoisAPIv2.Models
         [JsonProperty("nameservers")]
         public string[] NameServers { get; set; }
 
+        public DateTime RequestTime { get; set; }
     }
 }

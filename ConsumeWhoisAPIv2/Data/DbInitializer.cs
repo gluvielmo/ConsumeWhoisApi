@@ -21,7 +21,7 @@ namespace ConsumeWhoisAPIv2.Data
 
             var domains = new DomainModel[]
             {
-                new DomainModel{Name="teste.com",Registered=true,RegisterDate="04/09/2019",LastUpdate="04/04/2020",ExpiresAt="25/12/2021", NameServers=Ns}
+                new DomainModel{Name="teste.com",Registered=true,RegisterDate="04/09/2019",LastUpdate="04/04/2020",ExpiresAt="25/12/2021", NameServers=Ns, RequestTime=DateTime.Now}
             };
             foreach (DomainModel domain in domains)
             {

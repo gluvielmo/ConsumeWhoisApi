@@ -22,6 +22,8 @@ namespace ConsumeWhoisAPIv2.Models
 
             var domainResponse = JsonConvert.DeserializeObject<DomainModel>(response.Content);
 
+            domainResponse.RequestTime = DateTime.UtcNow;
+
             return domainResponse;
         }
 

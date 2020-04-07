@@ -32,7 +32,7 @@ namespace ConsumeWhoisAPIv2.Controllers
         [HttpPost]
         public ActionResult DomainSearch(string domain)
         {
-            if (_db.Domains.FirstOrDefault(d => d.Name == domain) != null)
+            if (_db.Domains.FirstOrDefault(d => d.Name == domain && d.RequestTime.AddMinutes(2) > DateTime.UtcNow) != null)
             {
                 var domainAlreadyinDb = _db.Domains.First(d => d.Name == domain);
                 return View("Index", domainAlreadyinDb);
