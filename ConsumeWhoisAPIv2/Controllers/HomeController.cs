@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using ConsumeWhoisAPIv2.Models;
 using ConsumeWhoisAPIv2.Client;
 using Microsoft.EntityFrameworkCore;
+using Z.EntityFramework.Plus;
 
 namespace ConsumeWhoisAPIv2.Controllers
 {
@@ -35,16 +36,21 @@ namespace ConsumeWhoisAPIv2.Controllers
         {
             if (_db.Domains.FirstOrDefault(d => d.Name == domain && d.RequestTime.AddMinutes(2) > DateTime.UtcNow) != null)
             {
-                var domainAlreadyinDb = _db.Domains.First(d => d.Name == domain);
+                Console.WriteLine("Db Accessed");
+                var domainAlreadyinDb = _db.Domains.FromCache().FirstOrDefault(d => d.Name == domain);
                 return View("Index", domainAlreadyinDb);
             }
             else
             {
+                Console.WriteLine("Api Accessed");
                 var domainResponse = new RequestApiClient().DomainSearch(domain);
 
-                _db.Domains.Add(domainResponse);
-                _db.SaveChanges();
-
+                if(domainResponse.Registered)
+                {
+                    _db.Domains.Add(domainResponse);
+                    _db.SaveChanges();
+                }
+        
                 return View("Index", domainResponse);
             }
         }

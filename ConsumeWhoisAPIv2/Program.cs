@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using ConsumeWhoisAPIv2.Data;
 using ConsumeWhoisAPIv2.Models;
+using EFCache;
 
 namespace ConsumeWhoisAPIv2
 {
@@ -16,6 +17,8 @@ namespace ConsumeWhoisAPIv2
     {
         public static void Main(string[] args)
         {
+            //EntityFrameworkCache.Initialize(new InMemoryCache());
+
             var host = CreateHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())
